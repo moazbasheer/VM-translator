@@ -48,13 +48,14 @@ public class Parser {
         else if (command.matches("^function.*")) { return Constants.C_FUNCTION; }
         else if (command.matches("^call.*")) { return Constants.C_CALL; }
         else if (command.matches("^return.*")) { return Constants.C_RETURN; }
+                
 		return -1;
 	}
 	
 	public String arg1() {
         String result = null;
         int type = commandType();
-		
+
         if (type == Constants.C_ARITH) { result = command; }
         else { result = command.split(" ")[1]; }
 
