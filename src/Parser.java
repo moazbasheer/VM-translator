@@ -22,20 +22,22 @@ public class Parser {
 	}
 	public void advance() {
 		do {
-            command = scan.nextLine().trim();
-            
-        } while (command.equals("") || command.substring(0,2).equals("//"));
-		
+		    command = scan.nextLine().trim();
+
+		} while (command.equals("") || command.substring(0,2).equals("//"));
+
 		if(command.contains("//")){
 			int x = command.indexOf("//");
 			command = command.substring(0,x);
 			x = command.indexOf('\t');
+			
 			if(x != -1){
 				command = command.substring(0,x);
 			}
 		}
 		System.out.println(command);
 	}
+	
 	public int commandType() {
 		if (command.matches("^(add|sub|neg|eq|gt|lt|and|or|not).*")) { return Constants.C_ARITH; } 
         else if (command.matches("^push.*")) { return Constants.C_PUSH; }
@@ -48,23 +50,24 @@ public class Parser {
         else if (command.matches("^return.*")) { return Constants.C_RETURN; }
 		return -1;
 	}
+	
 	public String arg1() {
         String result = null;
         int type = commandType();
+		
         if (type == Constants.C_ARITH) { result = command; }
         else { result = command.split(" ")[1]; }
 
         return result;
     }
+	
 	public int arg2() {
         int type = commandType();
         String result = null;
         
         result = command.split(" ")[2];
         
-        System.out.println("/"+result + "/");
         if (!isNumeric(result)) { return -1; }
-        System.out.println(result);
         int res = Integer.parseInt(result);
         return res;
     }
