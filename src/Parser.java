@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Parser {
 	File file ;
 	Scanner scan ;
-	String command;
+	String command; 
 	public Parser(String filename) throws FileNotFoundException{
 		file = new File(filename);
 		scan = new Scanner(file);
