@@ -54,7 +54,7 @@ public class Parser {
 	public String arg1() {
         String result = null;
         int type = commandType();
-
+ 
         if (type == Constants.C_ARITH) { result = command; }
         else { result = command.split(" ")[1]; }
 
