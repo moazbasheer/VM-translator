@@ -12,6 +12,7 @@ public class VMTranslator {
 		if (file.isFile()) {
 			if (filename.contains(".vm")) {
 				outputName = new String[1];
+				
 				outputName[0] = filename.split("[.]")[0] + ".vm";
 			} else {
 				System.out.println("Not a vm file");
@@ -19,6 +20,7 @@ public class VMTranslator {
 			}
 		} else if (file.isDirectory()) {
 			outputName = file.list();
+			
 			for (int i = 0; i < outputName.length; i++) {
 				if (!outputName[i].contains(".vm")) {
 					outputName[i] = "";
@@ -26,6 +28,7 @@ public class VMTranslator {
 					outputName[i] = filename + "/" + outputName[i];
 				}
 			}
+			
 			for(int i=0;i<outputName.length;i++){
 				if(outputName[i].contains("Sys.vm")){
 					String temp = outputName[0];
@@ -49,9 +52,9 @@ public class VMTranslator {
 			for (int i = 0; i < outputName.length; i++) {
 				if (outputName[i].equals(""))
 					continue;
-				System.out.println(outputName[i]);
 				parser = new Parser(outputName[i]);
 				codeWriter.setFileName(outputName[i]);
+				
 				while (parser.hasMoreCommands()) {
 					parser.advance();
 					int commandType = parser.commandType();
