@@ -395,11 +395,11 @@ public class CodeWriter {
 
 	void writeInit() throws IOException {
 		output.write("@256\n");
-        output.write("D=A\n");
-        output.write("@SP\n");
-        output.write("M=D\n");
-        functionName = "Sys.init";
-        writeCall("Sys.init",0);
+        	output.write("D=A\n");
+        	output.write("@SP\n");
+        	output.write("M=D\n");
+        	functionName = "Sys.init";
+        	writeCall("Sys.init",0);
 	}
 
 	void writeFunction(String funcName, int nVars) throws IOException {
@@ -458,8 +458,8 @@ public class CodeWriter {
 		output.write("D=D-A\n");
 		output.write("@" + nVars + "\n");
 		output.write("D=D-A\n");
-        output.write("@ARG\n");
-        output.write("M=D\n");
+        	output.write("@ARG\n");
+        	output.write("M=D\n");
 		//LCL=SP
 		output.write("@SP\n");
 		output.write("D=M\n");
