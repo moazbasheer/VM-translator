@@ -38,7 +38,7 @@ public class Parser {
 		System.out.println(command);
 	}
 	
-	public int commandType() {
+    public int commandType() {
         if (command.matches("^(add|sub|neg|eq|gt|lt|and|or|not).*")) { return Constants.C_ARITH; } 
         else if (command.matches("^push.*")) { return Constants.C_PUSH; }
         else if (command.matches("^pop.*")) { return Constants.C_POP; }
@@ -48,9 +48,8 @@ public class Parser {
         else if (command.matches("^function.*")) { return Constants.C_FUNCTION; }
         else if (command.matches("^call.*")) { return Constants.C_CALL; }
         else if (command.matches("^return.*")) { return Constants.C_RETURN; }
-		
 		return -1;
-	}
+    }
 	
 	public String arg1() {
         String result = null;
