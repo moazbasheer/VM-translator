@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Parser {
 	File file;
-	Scanner scan;
+	Scanner scan; 
 	String command;
 
 	public Parser(String filename) throws FileNotFoundException {
