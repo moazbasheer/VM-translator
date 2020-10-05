@@ -81,6 +81,7 @@ public class Parser {
         }
         return true;
     }
+
 	void close(){
 		scan.close();
 	}
