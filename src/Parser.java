@@ -61,7 +61,7 @@ public class Parser {
 
         return result;
     }
-	
+	 
 	public int arg2() {
         int type = commandType();
         String result = null;
