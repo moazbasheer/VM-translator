@@ -64,7 +64,7 @@ public class Parser {
 	public int arg2() {
         int type = commandType();
         String result = null;
-        
+       
         result = command.split(" ")[2];
         
         if (!isNumeric(result)) { return -1; }
