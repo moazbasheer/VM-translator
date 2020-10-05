@@ -84,7 +84,7 @@ public class Parser {
 		result = command.split(" ")[2];
 
 		if (!isNumeric(result)) {
-			return -1;
+			return -1; 
 		}
 		int res = Integer.parseInt(result);
 		return res;
